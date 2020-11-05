@@ -23,7 +23,7 @@ export default class Blank extends React.Component {
     }
   }
 
-  state = { Switch_3: true, Switch_4: false }
+  state = { Switch_3: true, Switch_4: false, DateTimePicker_7: new Date("") }
 
   render = () => (
     <View>
@@ -33,15 +33,24 @@ export default class Blank extends React.Component {
         onPress={() => alert("Pressed!")}
       />
       <Switch
+        trackColor={{ false: "#C0CCDA", true: "#409EFF" }}
         value={this.state.Switch_3}
         onValueChange={nextChecked => this.setState({ Switch_3: nextChecked })}
       />
       <Switch
         activeColor="#49d064"
         inactiveColor="#d37a36"
-        trackColor={{ false: "#d37a36", true: "#49d064" }}
         value={this.state.Switch_4}
         onValueChange={nextChecked => this.setState({ Switch_4: nextChecked })}
+      />
+      <Text>Sample text content</Text>
+      <Button title="Press me!" onPress={() => alert("Pressed!")} />
+      <DateTimePicker
+        showIcon={false}
+        date={this.state.DateTimePicker_7}
+        onDateChange={selectedDate =>
+          this.setState({ DateTimePicker_7: selectedDate })
+        }
       />
     </View>
   )
@@ -63,5 +72,12 @@ const styles = StyleSheet.create({
   View_1: {},
   Button_2: {},
   Switch_3: {},
-  Switch_4: {}
+  Switch_4: {},
+  View_1: {},
+  Button_2: {},
+  Switch_3: {},
+  Switch_4: {},
+  Text_5: {},
+  Button_6: {},
+  DateTimePicker_7: {}
 })
